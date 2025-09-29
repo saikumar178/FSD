@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=3, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let processNumbers=()=>{
+            const numbers=[1,2,3,4,5,6,7,8,9,10];
+
+            //filter: get odd numbers
+            const oddNumbers = numbers.filter(num => num%2 !== 0);
+            document.write(`Odd Numbers: ${oddNumbers} <br>`);
+
+            //map : Double the odd numbers 
+            const doubledOddNumbers = oddNumbers.map(num => num*2);
+            document.write(`Doubled Odd Numbers: ${doubledOddNumbers} <br>`);
+
+            //reduce:  sum of doubled numbers
+            const sum = doubledOddNumbers.reduce((sum,n)=>sum+n,0);
+            document.write(`Sum of Doubled Odd Numbers: ${sum} <br>`);
+
+            const product = doubledOddNumbers.reduce((prod,n)=>prod*n,1);
+            document.write(`product of Doubled Odd Numbers: ${product} <br>`);
+        }
+        processNumbers();
+    </script>
+</body>
+</html>

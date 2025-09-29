@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name-p">Name:</label>
+    <p id="name-p">NAME</p>
+    <script>
+        let name = prompt("Enter your Name");
+        document.getElementById('name-p').innerText=name;
+        alert(`Hello ${name}...`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors</title>
+    <style>
+
+        /*  1. Element Selector  */
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+            text-decoration: underline;
+        }
+
+
+        /* 2. Group Element Selector */
+        h1,h2{
+            text-align: center;
+        }
+
+
+        /* 3. Universal Selector */
+        *{
+            background-color:beige;
+            margin: 10;
+        }
+
+
+        /* 4. Class Selector */
+        .highlight{
+            color: green;
+        }
+        .head-3{
+            text-decoration: line-through;
+        }
+        .n{
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 50;
+        }
+        .i{
+            font-style: italic;
+            font-variant: small-caps;
+            font-weight: 900;
+        }
+        .o{
+            font-style: oblique;
+            color: rgb(199, 58, 81);
+            font-weight: bold;
+        }
+
+        /* 5. Id Selector  */
+        #unique{
+            color: blueviolet;
+        }
+        #head-4{
+            text-decoration: overline;
+        }
+        #head-5{
+            text-decoration: overline underline;
+        }
+
+        /* 
+          Text-decorations
+                ->overline
+                ->underline
+                ->line-through
+
+        */
+    </style>
+</head>
+<body>
+    <h1>Home</h1>
+    <h2>Dashboard</h2>
+    <p class="highlight n">Welcome to the Dashboard</p>
+    <p class="i" id="unique" >css selectors...</p>
+    <p class="o">Universal Selectors</p>
+    <h3 class="head-3">Class Selectors</h3>
+    <h4 id="head-4">ID Selectors</h4>
+    <h5 id="head-5">Element Selectors</h5>
+</body>
+</html>

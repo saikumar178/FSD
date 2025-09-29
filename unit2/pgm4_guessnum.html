@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     const playGame = () =>{
+        const randomNumber = Math.ceil(Math.random()*100);
+        let guess;
+        let attempt = 0;
+        let tryAgain;
+        do{
+            guess = parseInt(prompt('Enter a number from 1-100'));
+            attempt++;
+            if(guess > randomNumber){
+                alert('Too high!!, try again..');
+            }else if(guess < randomNumber){
+                alert('Too low!!, try again..');
+            }else if(guess === randomNumber){
+                tryAgain=confirm('Congrats!! you won, wanna try again');
+                if(tryAgain){
+                    playGame();
+                }else{
+                    alert('ok, bye');
+                }
+            }else{
+                alert('enter a valid number')
+            }
+
+        }while(guess !== randomNumber);
+    }
+     playGame();
+    </script>
+</body>
+</html>

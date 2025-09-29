@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        //Function without parameters
+        function greet(){
+            document.write("hello,Welcome to javascript function<br>");
+        }
+        greet();
+
+        //Function with parameters
+        function add(a,b){
+            return a+b;
+        }
+        document.write(`sum of 5 and 10 = ${add(5,10)} <br>`);
+
+        //Function Expression
+        let multiply = function(x,y){
+            return x * y;
+        }
+        document.write(`multiplication of 5 and 10 = ${multiply(5,10)} <br>`);
+
+        //Arrow Function
+        let square = (n)=>n*n;
+        document.write(`square of 7 = ${square(7)} <br>`);
+
+
+    </script>
+</body>
+</html>

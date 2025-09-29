@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Simulation</title>
+  </head>
+  <body>
+    <h1>Login Simulation</h1>
+    <script>
+      const predefinedUsername = "user";
+      const predefinedPassword = "password123";
+
+      const loginSimulation = () => {
+        const username = prompt("Enter the username");
+        const password = prompt("Enter the password");
+
+        if (username === predefinedUsername && password === predefinedPassword) {
+          alert(`Login Successful! Welcome, ${username}.`);
+        } else {
+          const tryAgain = confirm(
+            "Invalid credentials. Do you want to try again?"
+          );
+          if (tryAgain) {
+            loginSimulation();
+          } else {
+            alert("Login Failed.");
+          }
+        }
+      };
+
+      loginSimulation();
+    </script>
+  </body>
+</html>

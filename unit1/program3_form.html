@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <!-- <form>
+        <label for="firstname" >First Name:</label>
+        <input type="text" name="firstname" required>
+        <br>
+        <label for="lastname">Last name:</label>
+        <input type="text" name="lastname" required>
+        <br>
+        <label for="email"> Email:</label>
+        <input type="email" name="email" required>
+        <br>
+        <label for="password"> Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <input type="submit" value="Login!">
+    </form> -->
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" />
+      <br />
+      <label for="sex">Sex:</label>
+      <input type="radio" name="sex" id="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="sex" id="female" />
+      <label for="female">Female</label>
+      <br />
+      <label for="Message">Message:</label>
+      <br />
+      <textarea cols="30" rows="4"></textarea>
+      <br />
+      <label for="country">Country:</label>
+      <select name="country">
+        <option>Choose a country</option>
+        <option value="USA">USA</option>
+        <option value="Australia">Australia</option>
+        <option value="UK">UK</option>
+      </select>
+      <br />
+      <label for="Hobbies">Hobbies:</label>
+      <input type="checkbox" value="Coding" />
+      <label for="checkbox">Coding</label>
+      <input type="checkbox" value="Gaming" />
+      <label for="checkbox">Gaming</label>
+      <br />
+      <label for="file">Choose a file:</label>
+      <input type="file" id="file" name="myfile" required />
+      <br />
+      <label for="image">Choose an image:</label>
+      <input type="file" id="image" name="myfile" accept="image/*" required />
+      <br />
+      <label for="docs">Upload a Doc(pdf,word or text):</label>
+      <input
+        type="file"
+        id="docs"
+        name="myfile"
+        accept=".pdf,.docx,.word,.txt"
+        required
+      />
+      <br />
+      <label for="multi">Choose multiple images:</label>
+      <input
+        type="file"
+        id="multi"
+        name="myfile"
+        accept="image/*"
+        required
+        multiple
+      />
+    </form>
+  </body>
+</html>

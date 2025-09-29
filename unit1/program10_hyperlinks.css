@@ -1,0 +1,10 @@
+.nav-bar{
+        margin: 0px;
+        background-color: pink;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 400px;
+        border-radius: 30px;
+       }
