@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple event handling</title>
+    <script>
+        function changeheadingcolor(){
+                document.getElementById("header").style.color="blue";
+        } 
+        function changebackgroundcolor(){
+                document.getElementById("paragraph").style.backgroundColor="yellow";
+        }
+         function mouseclick(){
+            message.textContent="Button was clicked!"
+            button.style.backgroundColor="green"
+        };
+    </script>
+</head>
+<body>
+    <p id="header">Event Handling Example </p>
+    <button onclick="changeheadingcolor()"> Change Heading color</button>
+    <p id="paragraph">This paragraph background color changes </p>
+    <button onclick="changebackgroundcolor()"> Change background color</button>
+</body>
+</html>

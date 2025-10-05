@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text replacement</title>
+</head>
+
+<body>
+    <h2>test replacement</h2>
+    <p id="header">first line</p>
+    <p id="footer"> second line</p>
+    <script>
+        document.getElementById("header").textContent = "<b>Hello world !!</b>"
+        document.getElementById("footer").innerHTML = "<b>welcome</b>"
+    </script>
+</body>
+
+</html>

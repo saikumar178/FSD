@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listners</title>
+</head>
+<body>
+    <button id="MultiEventButton"> Hover or Click Me!</button>
+    <div id="message">Interact with the button above</div>
+    <script>
+        const button = document.getElementById("MultiEventButton");
+        const message=document.getElementById("message");
+        //click event listener
+        button.addEventListener("click",function(){
+            message.textContent="Button was clicked!"
+            button.style.backgroundColor="green"
+        });
+         //mouseover event listener
+        button.addEventListener("mouseover",function(){
+            message.textContent="Mouse is over the button!"
+            button.style.backgroundColor="yellow"
+        });
+         //mouseout event listener
+        button.addEventListener("mouseout",function(){
+            message.textContent="Mouse left the button!"
+            button.style.backgroundColor="Red"
+        });
+    </script>
+</body>
+</html>
