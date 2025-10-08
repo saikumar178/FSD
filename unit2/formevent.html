@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="useform">
+        <label for ="name">Name:</label>
+        <input type="text" id="name" placeholder="enter your name">
+        <br>
+        <label for="email">email :</label>
+        <input type="email" id="email" placeholder="enter your email"><br>
+        <button type="submit">submit</button>
+    </form>
+    <p id="status"></p>
+    <script>
+        let form=document.getElementById("useform");
+        let name=document.getElementById("name");
+        let email=document.getElementById("email");
+        let status=document.getElementById("status");
+        name.addEventListener("focus",function(){
+            status.innerHTML="name field is focused";
+            status.style.color="lightblue";
+        });
+        email.addEventListener("focus",function(){
+            status.innerHTML="email field is focused";
+            status.style.color="green";
+        });
+        name.addEventListener("blur",function(){
+            status.innerHTML="name field is out of focus";
+            status.style.color="yellow";
+        });
+        email.addEventListener("blur",function(){
+            status.innerHTML="email field is out of  focused";
+            status.style.color="orange";
+        });
+        form.addEventListener("submit",function(){
+            let subname=name.value
+            let subemail=email.value;
+            if(subname === "" || subemail ===""){
+                status.textContent="please fill in both fields";
+                status.style.color="red";
+            }
+            else{
+                status.textContent=`form is submitted with name ${subname} and email ${subemail}`;
+                status.style.color="darkgreen";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            padding:auto;
+            margin:auto;
+            height:300px;
+            width:300px;
+            background-color: lightblue;
+            border:2px solid black;
+            text-align: center;
+            line-height:300px;
+            font-size:20px;
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">box model</div>
+    <script>
+        const b=document.getElementById("box");
+        b.onclick=function(){
+            b.innerHTML="mouse clicked";
+            b.style.backgroundColor="yellow";
+        }
+        b.onmouseout=function(){
+            b.innerHTML="mouse out";
+            b.style.backgroundColor="lightblue";
+        }
+        b.onmousedown=function(){
+            b.innerHTML="mouse down";
+            b.style.backgroundColor="orange";
+        }
+        b.onmouseover=function(){
+            b.innerHTML="mouse over";
+            b.style.backgroundColor="pink";
+        }
+        b.onmouseup=function(){
+            b.innerHTML="mouse up";
+            b.style.backgroundColor="green";
+        }
+        // b.onmouseout=function(){
+        //     b.innerHTML="mouse out";
+        //     b.style.backgroundColor="lightblue";
+        // }
+    </script>
+</body>
+</html>

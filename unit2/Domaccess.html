@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainheading">welcome students</h1>
+    <p class="text">this is the first paragraph</p>
+    <p class="text">this is the second paragraph</p>
+    <h2>this is heading one</h2>
+    <h2>this is heading two</h2>
+    <ul><h4>list</h4>
+    <li>Apple</li>
+    <li>orange</li>
+    <li>banana</li>
+    </ul>
+    <button onclick=demodom()>demo</button> 
+    <script>
+        function demodom(){
+           let heading=document.getElementById("mainheading");
+            heading.style.color="red";
+        const para=document.getElementsByClassName("text");
+        para[0].style.color="green";
+        para[1].style.fontWeight="bold";
+
+        const head=document.getElementsByTagName("h2");
+        head[0].style.color="blue";
+        head[1].style.textDecoration="underline";
+        const pa=document.querySelector(".text");
+        pa.style.backgroundColor="purple";
+        const item=document.querySelectorAll("ul li");
+        item.forEach(item=>{
+            item.style.textTransform="uppercase";
+        });
+        }
+        
+    </script>
+</body>
+</html>
