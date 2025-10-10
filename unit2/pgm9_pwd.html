@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleFocus(){
+            document.getElementById("msg").innerHTML="Password field is active(onFocus)";
+            document.getElementById("pwd").style.background="yellow"
+        }
+        function handleBlur(){
+            document.getElementById("msg").innerHTML="Password field is inactive(onBlur)";
+            document.getElementById("pwd").style.background="white";
+        }
+        function handleChange(){
+            let pwd = document.getElementById('pwd').value;
+            let msg = document.getElementById('msg')
+
+            if(pwd.length === 0){
+                msg.innerHTML="start Entering Password (onChange)";
+                msg.style.color='grey';
+            }else if(pwd.length < 6){
+                msg.innerHTML="weak Password (onChange)";
+                msg.style.color='red';
+            }else if(pwd.length < 10){
+                msg.innerHTML="Medium strength password"
+                msg.style.color='yellow';
+            }else{
+                msg.innerHTML="Strong password"
+                msg.style.color='green';
+            }
+        } 
+        function handleKeyup(){
+            console.log("Key released (onkeyup)");
+        }
+    </script>
+</head>
+<body>
+    <h2>Handling Events in Password</h2>
+
+    <label for="pwd">Enter your password:</label>
+    <input type="text" id="pwd"
+    onblur="handleBlur()"
+    onfocus="handleFocus()"
+    oninput="handleChange()"
+    onkeyup="handleKeyup()"
+    >
+    <p id="msg">Interact with the password.</p>
+</body>
+</html>
