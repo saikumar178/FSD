@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form validation</h2>
+    <label for="userName">Enter the Name:</label>
+    <input type="text" id="userName" placeholder="Enter your name..">
+    <br>
+    <label for="userPwd">Enter the Password:</label>
+    <input type="text" id="userPwd" placeholder="Enter your password..">
+    <br>
+    <button id="submit-btn" disabled>Submit</button>
+    <script>
+        let pwd = document.getElementById('userPwd');
+        let name = document.getElementById('userName');
+        let btn = document.getElementById('submit-btn');
+        name.addEventListener('input',validate);
+        pwd.addEventListener('input',validate);
+
+        validate();
+        function validate(){
+            if(name.value.trim() === '' || pwd.value === '' ){
+                btn.disabled=true;
+            }else{
+                btn.disabled=false;
+            }
+        }
+    </script>
+</body>
+</html>
