@@ -38,7 +38,6 @@ function App(){
 export default App;
 
 
-import React from 'react'
 const Welcome = (props) => {
   return (
     <>
@@ -47,3 +46,47 @@ const Welcome = (props) => {
   )
 }
 export default Welcome
+
+pgm4 --Multiple props
+
+import Welcome from './Welcome';
+function App(){
+  return(
+    <>
+      <h1>Welcome to React..</h1>
+      <Welcome name="john" age="25"/>
+    </>
+  );
+}
+export default App;
+
+const Welcome = (props) => {
+  return (
+    <>
+      <h2>Student Details:</h2>
+      <h3>Name: {props.name} ---  Age: {props.age}</h3>
+    </>
+  )
+}
+
+export default Welcome
+
+pgm 5 --React Hooks
+
+import React from 'react'
+import { useState, useEffect } from 'react'
+
+const Timer = () => {
+    const [count, setCount] = useState(0);
+    useEffect(()=>{
+        console.log('hello')
+    },[])
+  return (
+    <>
+      <h2>Count: {count}</h2>
+      <button onClick={()=>setCount(count+1)}>Increase</button>
+    </>
+  )
+}
+
+export default Timer

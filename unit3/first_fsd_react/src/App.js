@@ -1,13 +1,9 @@
-import Welcome from './Welcome';
-import Sample from './Sample';
+import Timer from './Timer';
 
 function App(){
   return(
     <>
-      <h1>Welcome to React..</h1>
-      <Welcome name="john"/>
-      <Welcome name="william"/>
-      <Sample/>
+      <Timer/>
     </>
   );
 }
