@@ -1,9 +1,8 @@
-import Timer from './Timer';
-
+import LifeCycleExample from "./LifeCycleExample";
 function App(){
   return(
     <>
-      <Timer/>
+      {/* <LifeCycleExample/> */}
     </>
   );
 }
