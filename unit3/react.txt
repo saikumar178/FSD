@@ -151,3 +151,43 @@ class LifeCycleExample extends Component {
 
 export default LifeCycleExample;
 
+// Routing
+<nav>
+        <Link to='/'>Home  </Link><br/>
+        <Link to='/about'>About  </Link><br/>
+        <Link to='/contact'>Contact  </Link><br/>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/About" element={<About/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
+      </Routes>
+
+  //  Creating Portal
+
+  import ReactDom from "react-dom";
+
+function Modal({children}){
+    return ReactDom.createPortal(
+        <div>
+            <h2>Inside modal component</h2>
+            {children}
+        </div>,
+        document.getElementById('portal-root')
+    )
+}
+
+export default Modal;
+
+
+<h2>React Portal example</h2>
+      <button onClick={()=>setShow(true)}>Open</button>
+      {show && (
+        <Modal>
+          <h3>This is portal</h3>
+          <button onClick={()=>setShow(false)}>close</button>
+        </Modal>
+      )}
+
+  
+  and also add a div in the index.html file

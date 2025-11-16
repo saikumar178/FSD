@@ -1,0 +1,3 @@
+ name : john,
+ subject: fsd,
+ marks : 25
