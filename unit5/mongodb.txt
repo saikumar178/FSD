@@ -1,0 +1,30 @@
+----------------------------------------------MongoDB--------------------------------------------------
+    
+    use collegeDB                                //create DB
+    db.createCollection("students")              //create collection
+    show collections                             //show all collections in DB
+    db.students.insertOne({name:"sai",age:20,dept:"CSE"})
+    db.students.insertMany([{name:"rhithwik",age:22,dept:"CSE"},{name:"Rahul",age:21,dept:"AIML"},{name:"Trivikram",age:20,dept:"ISE"}])               
+    db.students.find().pretty()                 //get all documents
+    db.students.find({dept:"CSE"})              //dept == CSE
+    db.students.find({age:21})                  //age == 21
+    db.students.find({age:{$gt:21}})            //age > 21
+        gt -- greater than
+        lt -- less than
+        gte -- greater than or equal to
+        lte -- less than or equal to
+    db.students.find({},{name: 1,_id:0})        //display all students names
+    db.students.find().sort({age:1})            //Ascending Sort
+    db.students.find().sort({age:-1})           //Descending Sort
+    db.students.updateOne({name:"sanat"},{$set:{age:20}})      //Update a value in document
+    db.students.deleteOne({name:"sanat"})
+    db.students.deleteMany({age:20})
+    db.students.drop()
+    db.dropDatabase()
+
+    in compass--
+    find
+    add data  --to insert
+    update    --to update
+    options->project
+    options->sort
