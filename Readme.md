@@ -1,12 +1,59 @@
-FSD - Full Stack Development Course Work
+# FSD – Full Stack Development Course Work  
+### Bachelor of Engineering in Computer Science & Engineering (B.E. CSE)
 
-Bachelor of Engineering in Computer Science & Engineering (B.E. CSE)
+This repository contains the complete coursework, assignments, notes, and practical projects completed as part of the **Full Stack Development (FSD)** module in the B.E. Computer Science & Engineering program.
 
-    This repository documents the complete coursework, assignments, and practical projects undertaken for the Full Stack Development (FSD) module of the B.E. Computer Science and Engineering program.
+The course covers both front-end and back-end development, focusing on modern technologies, hands-on implementation, and real-world project building.
 
+---
 
-unit 1 -  HTML, CSS
-unit 2 -  JS
-unit 3 -  ReactJS
-unit 4 -  NodeJS
-unit 5 -  MongoDB
+## 📘 Course Units
+
+### **Unit 1 – HTML & CSS**
+- Introduction to Web Structure  
+- Semantic HTML  
+- CSS Fundamentals  
+- Layouts: Flexbox & Grid  
+- Forms, Tables, Media 
+
+---
+
+### **Unit 2 – JavaScript**
+- Variables, Data Types, Operators  
+- Functions, Scope, Hoisting  
+- DOM Manipulation  
+- Events & Event Handling  
+- Arrays & Objects  
+- ES6+ Features (Arrow Functions, Let/Const, Spread, Destructuring) 
+
+---
+
+### **Unit 3 – ReactJS**
+- Components & Props  
+- Hooks: useState, useEffect  
+- State Management  
+- React Router  
+- API Integration  
+- Component Architecture 
+
+---
+
+### **Unit 4 – Node.js**
+- Backend Development Basics  
+- Node.js Modules  
+- Express.js Framework  
+- Middleware  
+- REST API Development  
+- Authentication Basics  
+
+---
+
+### **Unit 5 – MongoDB**
+- NoSQL Concepts  
+- CRUD Operations  
+- Collections & Documents  
+- Mongoose ODM  
+- Data Modeling  
+- Integrating MongoDB with Node.js (MongoDB Atlas)
+
+---
