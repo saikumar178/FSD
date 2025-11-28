@@ -1,0 +1,5 @@
+---------------------------------mongoimport----------------------------------------------
+
+mongoimport --db=schoolDB --collection=students --file=students.json --jsonArray
+mongoexport --db=schoolDB --collection=students --out=exported_students.json --jsonArray
+mongoexport --db=schoolDB --collection=students --out="C:\Users\karu3\OneDrive\Desktop\export.json" --jsonArray

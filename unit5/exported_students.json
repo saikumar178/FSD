@@ -1,0 +1,1 @@
+[{"_id":{"$oid":"692800b833972c92bddd8945"},"name":"Arun","age":20,"marks":85},{"_id":{"$oid":"692800b833972c92bddd8946"},"name":"Divya","age":21,"marks":90},{"_id":{"$oid":"692800b833972c92bddd8947"},"name":"Kiran","age":19,"marks":78}]
