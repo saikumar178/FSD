@@ -1,0 +1,8 @@
+1)  use collegeDB
+    db.createCollection("students")
+2)  db.students.insertMany([{name:'sai',age:20,sem:5,usn:'4ni23cs178',grade:'A'},{name:'sanat',age:21,sem:5,usn:'4ni23cs183',grade:'A+'},{name:'ruthwik',age:21,sem:5,usn:'4ni23cs177',grade:'A'}])
+3)  db.courses.insertMany([{courseName:'FSD',courseCode:'BCSFSD',credit:'3'},{courseName:'CN',courseCode:'BCSCN',credit:'4'}])
+4)  db.students.find()
+5)  db.students.find({age:{$gt:18}})
+6)  db.students.find({grade:'A'})
+7)  db.courses.find({credit:{$gte:3}})

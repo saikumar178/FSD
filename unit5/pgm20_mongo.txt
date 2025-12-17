@@ -1,0 +1,33 @@
+1)db.employees.insertMany([
+{ name: "John", department: "HR", salary: 35000 },
+{ name: "Priya", department: "HR", salary: 42000 },
+{ name: "Karan", department: "Finance", salary: 50000 },
+{ name: "Megha", department: "Finance", salary: 60000 },
+{ name: "Rahul", department: "IT", salary: 55000 },
+{ name: "Anita", department: "IT", salary: 70000 },
+{ name: "Sara", department: "IT", salary: 65000 }
+]);
+
+
+2)db.employees.aggregate([{$group:{_id:"$department",totalEmployees:{$sum:1},averageSalary:{$avg:"$salary"}}},{$sort:{totalEmployees:-1}}]);
+------------or--------------------------
+db.employees.aggregate([
+{
+$group: {
+_id: "$department",
+totalEmployees: { $sum: 1 },
+averageSalary: { $avg: "$salary" }
+}
+},
+{
+$sort: { totalEmployees: -1 }
+}
+]);
+
+
+output:
+[
+  { _id: 'IT', totalEmployees: 3, averageSalary: 63333.333333333336 },
+  { _id: 'HR', totalEmployees: 2, averageSalary: 38500 },
+  { _id: 'Finance', totalEmployees: 2, averageSalary: 55000 }
+]

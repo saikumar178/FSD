@@ -33,3 +33,7 @@ const someDebugInfo = "Debig error";
 console.debug('Debug details: ',someDebugInfo);
 
 console.timeEnd('Execution Time');
+
+console.time("loop");
+for (let i = 0; i < 10; i++) {}
+console.timeEnd("loop");

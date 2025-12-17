@@ -1,0 +1,7 @@
+1)  use workDB
+2)  db.createCollection('teachers')
+3)  db.teachers.insertMany([{name:'sai',subject:'FSD',exprerience:5},{name:'ruthwik',subject:'CN',exprerience:4},{name:'sanat',subject:'OS',exprerience:3}])
+
+//terminal or cmd prompts (should run it in terminal not in mongoShell)
+4)  mongoexport --db=workDB --collection=teachers --out="C:\Users\karu3\Desktop\FSD\unit5\workDB_teachers.json" --jsonArray
+5)  mongoimport --db=workDB --collection=studentsBackup --file=workDB_teachers.json --jsonArray

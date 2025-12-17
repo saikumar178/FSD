@@ -8,7 +8,10 @@ import About from "./About";
 import Contact from "./Contact";
 // import LifeCycleExample from "./LifeCycleExample";
 import Modal from "./Modal";
-
+import Dashboard from "./pages/Dashboard"
+import NotFound from "./pages/NotFound"
+import Settings from "./pages/Settings"
+import TaskDetails from "./pages/TaskDetails"
 function App(){
   const [show,setShow]=useState(false);
   return(
@@ -35,14 +38,24 @@ function App(){
         <Route path="/About" element={<About/>}/>
         <Route path="/Contact" element={<Contact/>}/>
       </Routes> */}
-      <h2>React Portal example</h2>
+      {/* <h2>React Portal example</h2>
       <button onClick={()=>setShow(true)}>Open</button>
       {show && (
         <Modal>
           <h3>This is portal</h3>
           <button onClick={()=>setShow(false)}>close</button>
         </Modal>
-      )}
+      )} */}
+      <nav>
+        <Link to='/'>Dashboard</Link>
+        <Link to='/settings'>Settings</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/task/:taskId" element={<TaskDetails/>}/>
+        <Route path="/settings" element={<Settings/>}/>
+        <Route path="/*" element={<NotFound/>}/>
+      </Routes>
     </>
   );
 }
