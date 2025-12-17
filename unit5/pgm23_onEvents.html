@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling Demo</title>
+    <style>
+        body { font-family: sans-serif; padding: 30px; line-height: 1.6; }
+        .box-section { 
+            border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; 
+            max-width: 400px; transition: 0.3s;
+        }
+        #hoverBox {
+            width: 200px; height: 80px; border: 2px dashed #555;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; cursor: pointer; border-radius: 5px;
+        }
+        .msg { font-size: 0.9em; color: #555; margin-top: 5px; font-style: italic; }
+        input { padding: 8px; width: 80%; border: 1px solid #ccc; border-radius: 4px; }
+        /* Style for onfocus */
+        .focused { border: 2px solid #007bff; background-color: #f0f7ff; outline: none; }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Event Handlers</h2>
+
+    <div class="box-section">
+        <label><b>1. onclick Event:</b></label><br>
+        <button id="clickBtn" onclick="handleClick()">Click Me!</button>
+        <p id="clickMsg" class="msg"></p>
+    </div>
+
+    <div class="box-section">
+        <label><b>2. onmouseover Event:</b></label><br>
+        <div id="hoverBox" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+            Hover Over Me
+        </div>
+    </div>
+
+    <div class="box-section">
+        <label><b>3. onkeyup Event (Live Preview):</b></label><br>
+        <input type="text" id="keyInput" onkeyup="handleKeyUp()" placeholder="Start typing...">
+        <div id="keyMsg" class="msg">You typed: </div>
+    </div>
+
+    <div class="box-section">
+        <label><b>4. onfocus & onblur Event:</b></label><br>
+        <input type="text" id="focusInput" onfocus="handleFocus()" onblur="handleBlur()" placeholder="Click inside me">
+        <div id="focusMsg" class="msg"></div>
+    </div>
+
+    <script>
+        // Triggered when button is clicked
+        function handleClick() {
+            document.getElementById("clickMsg").innerHTML = "✅ Button was clicked at " + new Date().toLocaleTimeString();
+            alert("Button Clicked!");
+        }
+
+        // Triggered when mouse enters the box
+        function handleMouseOver() {
+            let box = document.getElementById("hoverBox");
+            box.style.background = "#ffffcc";
+            box.style.borderColor = "#ffcc00";
+            box.innerHTML = "Welcome Inside!";
+        }
+
+        // Triggered when mouse leaves the box
+        function handleMouseOut() {
+            let box = document.getElementById("hoverBox");
+            box.style.background = "white";
+            box.style.borderColor = "#555";
+            box.innerHTML = "Hover Over Me";
+        }
+
+        // Triggered every time a key is released
+        function handleKeyUp() {
+            let val = document.getElementById("keyInput").value;
+            document.getElementById("keyMsg").innerHTML = "You typed: " + val;
+        }
+
+        // Triggered when input gets focus (cursor inside)
+        function handleFocus() {
+            let input = document.getElementById("focusInput");
+            input.classList.add("focused");
+            document.getElementById("focusMsg").innerHTML = "🟡 Input is now active (Focused)";
+        }
+
+        // Triggered when input loses focus (cursor outside)
+        function handleBlur() {
+            let input = document.getElementById("focusInput");
+            input.classList.remove("focused");
+            document.getElementById("focusMsg").innerHTML = "⚪ Input lost focus (Blurred)";
+        }
+    </script>
+</body>
+</html>

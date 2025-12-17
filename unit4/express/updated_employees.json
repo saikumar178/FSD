@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "6942ea383a61f27d33aae3ed",
+    "empId": 100,
+    "name": "Arun",
+    "designation": "Developer",
+    "salary": 30000
+  },
+  {
+    "_id": "6942ea383a61f27d33aae3ee",
+    "empId": 101,
+    "name": "Priya",
+    "designation": "Senior Developer",
+    "salary": 28000
+  },
+  {
+    "_id": "6942ea383a61f27d33aae3ef",
+    "empId": 102,
+    "name": "Rahul",
+    "designation": "Manager",
+    "salary": 45000
+  }
+]

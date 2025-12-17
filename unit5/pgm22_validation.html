@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .error { color: red; font-size: 0.85em; font-weight: bold; }
+        .card { 
+            border: 2px solid #333; padding: 20px; margin-top: 20px; 
+            width: 300px; border-radius: 10px; background-color: #f9f9f9; 
+        }
+        .card img { border-radius: 50%; border: 1px solid #ddd; display: block; margin: 0 auto; }
+        input, select, button { margin-bottom: 5px; width: 100%; max-width: 300px; padding: 8px; }
+        label { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>User Registration</h2>
+    <form id="regForm">
+        <label>Username:</label><br>
+        <input type="text" id="username" placeholder="At least 6 characters">
+        <div id="uErr" class="error"></div>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" placeholder="example@mail.com">
+        <div id="eErr" class="error"></div>
+
+        <label>Mobile Number:</label><br>
+        <input type="tel" id="mobile" placeholder="10 digit number">
+        <div id="mErr" class="error"></div>
+
+        <label>Password:</label><br>
+        <input type="password" id="password" placeholder="Letters + Numbers">
+        <div id="pErr" class="error"></div>
+
+        <label>Confirm Password:</label><br>
+        <input type="password" id="cpassword">
+        <div id="cErr" class="error"></div>
+
+        <label>Branch Selection:</label><br>
+        <select id="branch">
+            <option value="">-- Select Branch --</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+        </select>
+        <div id="bErr" class="error"></div>
+
+        <label>Upload Profile Picture:</label><br>
+        <input type="file" id="photo" accept="image/*">
+        <div id="phErr" class="error"></div><br>
+
+        <button type="button" onclick="validateForm()" style="background: #28a745; color: white;">Register</button>
+        <button type="reset" onclick="clearOutput()">Reset</button>
+    </form>
+
+    <div id="resultCard"></div>
+
+    <script>
+        function validateForm() {
+            // 1. Get Values
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+            let cpassword = document.getElementById("cpassword").value;
+            let branch = document.getElementById("branch").value;
+            let photoInput = document.getElementById("photo");
+            let photo = photoInput.files[0];
+
+            // 2. Reset Errors
+            let errorDivs = ["uErr", "eErr", "mErr", "pErr", "cErr", "bErr", "phErr"];
+            errorDivs.forEach(id => document.getElementById(id).innerHTML = "");
+            document.getElementById("resultCard").innerHTML = "";
+
+            let isValid = true;
+
+            // 3. Validation Logic
+            if (username.length < 6) {
+                document.getElementById("uErr").innerHTML = "Username must be at least 6 characters.";
+                isValid = false;
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("eErr").innerHTML = "Enter a valid email address.";
+                isValid = false;
+            }
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                document.getElementById("mErr").innerHTML = "Mobile must be exactly 10 digits.";
+                isValid = false;
+            }
+
+            // Must contain at least one letter and one number
+            if (!/[A-Za-z]/.test(password) || !/[0-9]/.test(password)) {
+                document.getElementById("pErr").innerHTML = "Password must include letters and numbers.";
+                isValid = false;
+            }
+
+            if (password !== cpassword || cpassword === "") {
+                document.getElementById("cErr").innerHTML = "Passwords do not match.";
+                isValid = false;
+            }
+
+            if (branch === "") {
+                document.getElementById("bErr").innerHTML = "Please select a branch.";
+                isValid = false;
+            }
+
+            if (!photo) {
+                document.getElementById("phErr").innerHTML = "Please upload a profile picture.";
+                isValid = false;
+            }
+
+            // 4. Success State
+            if (isValid) {
+                let imgURL = URL.createObjectURL(photo);
+                document.getElementById("resultCard").innerHTML = `
+                    <div class="card">
+                        <h3 style="text-align:center">User Details</h3>
+                        <img src="${imgURL}" width="100" height="100">
+                        <p><b>Username:</b> ${username}</p>
+                        <p><b>Email:</b> ${email}</p>
+                        <p><b>Mobile:</b> ${mobile}</p>
+                        <p><b>Branch:</b> ${branch}</p>
+                        <p style="color:green; text-align:center"><b>Registration Successful!</b></p>
+                    </div>
+                `;
+            }
+        }
+
+        function clearOutput() {
+            document.getElementById("resultCard").innerHTML = "";
+            let errorDivs = ["uErr", "eErr", "mErr", "pErr", "cErr", "bErr", "phErr"];
+            errorDivs.forEach(id => document.getElementById(id).innerHTML = "");
+        }
+    </script>
+</body>
+</html>
