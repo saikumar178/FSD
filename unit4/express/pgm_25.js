@@ -28,15 +28,16 @@ const Course = mongoose.model("Course", courseSchema);
  */
 app.get("/courses/stats/total-students", async (req, res) => {
   try {
-    const result = await Course.aggregate([
-      { $group: { _id: null, total: { $sum: "$studentsEnrolled" } } }
-    ]);
-    res.json({ totalStudents: result[0]?.total || 0 });
+    const courses = await Course.find(); // 1. Get all courses from DB
+    
+    // 2. Use JavaScript to add them up
+    const total = courses.reduce((sum, course) => sum + course.studentsEnrolled, 0);
+    
+    res.json({ totalStudents: total });
   } catch (error) {
-    res.status(500).json({ error: "Aggregation failed", details: error.message });
+    res.status(500).json({ error: "Could not calculate total" });
   }
 });
-
 /**
  * 2. CREATE A COURSE
  */

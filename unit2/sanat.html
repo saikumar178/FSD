@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handling Demo</title>
+</head>
+
+<body>
+    <h2>Event Handling Demonstration</h2>
+    <!-- onclick event -->
+    <button id="clickBtn" onclick="handleClick()">Click Me</button>
+    <br><br>
+    <!-- onmouseover event -->
+    <div id="hoverBox" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()"
+        style="width:180px; height:60px; border:1px solid black; text-align:center;">
+        Hover Over This Box
+    </div>
+    <br>
+    <!-- onkeyup event -->
+    <label>Type Something:</label><br>
+    <input type="text" id="keyInput" onkeyup="handleKeyUp()">
+    <div id="keyMsg"></div>
+    <br>
+    <!-- onfocus event -->
+    <label>Focus on this Input:</label><br>
+    <input type="text" id="focusInput" onfocus="handleFocus()" onblur="handleBlur()">
+    <div id="focusMsg"></div>
+    <br>
+    <script>
+        function handleClick() {
+            alert("Button Clicked!");
+        }
+        function handleMouseOver() {
+            document.getElementById("hoverBox").style.background = "#e0e0e0";
+        }
+        function handleMouseOut() {
+            document.getElementById("hoverBox").style.background = "white";
+        }
+        function handleKeyUp() {
+            let text = document.getElementById("keyInput").value;
+            document.getElementById("keyMsg").innerHTML = "You typed: " + text;
+        }
+        function handleFocus() {
+            document.getElementById("focusMsg").innerHTML = "Input is focused";
+        }
+        function handleBlur() {
+            document.getElementById("focusMsg").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
